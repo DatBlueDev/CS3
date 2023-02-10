@@ -1,1 +1,96 @@
+<!DOCTYPE html>
 
+<html>
+	<head>
+		<title>FA1</title>
+		<style>
+			body{
+				background-color:#768897;
+			}
+			.choices{
+				width:50px;
+				height:50px;
+				background-color:#93CDFF;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="Question">
+			<div class="choices" class="correctAnswer">
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		var x = 0;
+		
+		function addScore(Amount){
+			document.write(1);
+
+		}
+		
+		$('.correctAnswer').click(function(){
+			var isClicked = $(this).data('clicked');
+			if (!isClicked) {
+				addScore(1);
+				document.write(2);
+
+				$(this).data('clicked', true);
+			} else {
+				// the user has already clicked on this element
+			}
+		});
+	</script>
+	
+</html>
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>FA1</title>
+		<style>
+			body{
+				background-color:#768897;
+			}
+			.choices{
+				width:50px;
+				height:50px;
+				background-color:#93CDFF;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="Question">
+			<div class="choices" class="correctAnswer">
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		var x = 0;
+		
+		function addScore(Amount){
+			document.write(1);
+
+		}
+		
+		$('.correctAnswer').click(function(){
+			var isClicked = $(this).data('clicked');
+			if (!isClicked) {
+				addScore(1);
+				document.write(2);
+
+				$(this).data('clicked', true);
+			} else {
+				// the user has already clicked on this element
+			}
+		});
+	</script>
+	
+</html>
