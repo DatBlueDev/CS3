@@ -7,13 +7,45 @@
 		<title>FA1</title>
 		<style>
 			body{
-				background-color:#768897;
+                background-color:#1d094e;
+                background-size: cover;
+
 			}
-			.choices, .test{
-				width:50px;
+            .Question{
+                position: relative;
+                background-color: #fcf6ff;
+                border: 7px solid black;    
+                border-radius: 3px;
+                width:750px;
+                height:500px;
+            }
+
+			.Option{
+                
+                margin-bottom:5%;
+                margin-left:10%;
+                width:80px;
 				height:50px;
 				background-color:#93CDFF;
+                display: inline-block;
+                align-self: flex-end;
 			}
+            .Option{
+                display: inline-block;
+                align-self: flex-end;
+            }
+
+            #Counter{
+                font-size:25px;
+                font-family:Arial;
+                color:white;
+
+            }
+            
+            .QuestionTexts{
+                text-align:center;
+                font-size:40px;
+            }
 				
 			
 			
@@ -22,28 +54,65 @@
 
 	</head>
 	<body>
+        <p id = "Counter">Score: 0</p>
 		<div class="Question">
-			<div class="test" class="choices" >
+            <div id="QuestionText1" class="QuestionTexts">epico</div>
+			<div id="ChoicesContainer" >
+                <button class = "Option" id = "Option1" type="button" onclick="UserAnswer(1)">1</button>
+                <button class = "Option" id = "Option2" type="button" onclick="UserAnswer(2)">2</button>
+                <button class = "Option" id = "Option3" type="button" onclick="UserAnswer(3)">3</button>
+                <button class = "Option" id = "Option4" type="button" onclick="UserAnswer(4)">4</button>
+
 			</div>
 		</div>
 	</body>
 	
 	<script>
-		var x = 0;
+        var x = 0;
+        var i = 0;
+        const answerSheet = [2, 3, 1, 1, 4, 3]; // 6 QUESTIONS
 
-		function updateScore(){
-			document.write(x);
-
-		}
 		updateScore();
-		function addScore(Amount){
-			document.write(1);
+
+		function UserAnswer(ButtonChoice){
+
+            var correctAnswer = document.getElementById("Option" + answerSheet[i]);
+
+            var incorrectAnswer = [1, 2, 3, 4];
+            incorrectAnswer = incorrectAnswer.splice(i+1, i+1);
+            var Counter = document.getElementById('Counter');
+
+            for (let j = 1; j < 5; j++){
+                
+                document.getElementById("Option" + answerSheet[j]).disabled = 'true';
+
+            }
+            document.getElementById("Option" + ButtonChoice).style.backgroundColor= '#ff400a';
+            document.getElementById("Option" + ButtonChoice).style.color = 'white';
+
+            correctAnswer.style.backgroundColor = "#43E027";
+            correctAnswer.style.color = "black";
+
+            if (ButtonChoice == answerSheet[i])
+            {
+                x+=1;
+			    Counter.innerText ="Score:" + x;
+            }
+
+            
+
+
+
+            i+=1;
+
+
+
 
 		}
 		
 
 		$( ".test" ).click(function() {
-		  alert( "Handler for .click() called." );
+		  addScore(1);
 		});
 	</script>
 	
