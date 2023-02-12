@@ -56,7 +56,14 @@
 	<body>
         <p id = "Counter">Score: 0</p>
 		<div class="Question">
-            <div id="QuestionText1" class="QuestionTexts">epico</div>
+            <div id="QuestionText1" class="QuestionTexts">Question A</div>
+            <ol>
+                <li>Answer A</li>
+                <li>Answer B</li>
+                <li>Answer C</li>
+                <li>Answer D</li>
+              </ol>
+
 			<div id="ChoicesContainer" >
                 <button class = "Option" id = "Option1" type="button" onclick="UserAnswer(1)">1</button>
                 <button class = "Option" id = "Option2" type="button" onclick="UserAnswer(2)">2</button>
@@ -98,6 +105,8 @@
                 x+=1;
 			    Counter.innerText ="Score:" + x;
             }
+            document.getElementById("Option" + answerSheet[i]).disabled = 'true';
+
 
             
 
@@ -111,9 +120,7 @@
 		}
 		
 
-		$( ".test" ).click(function() {
-		  addScore(1);
-		});
+
 	</script>
 	
 </html>
