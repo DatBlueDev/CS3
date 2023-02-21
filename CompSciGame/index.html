@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <style>
+            body {
+                background-color:black;
+            }
+            #playerCharacter{
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform: translate(50%, 50%);
+
+                width:30px;
+                height:30px;
+                font-family:arial;
+                color:White;
+                animation-name: spin;
+                animation-duration: 500ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            .bullet { 
+                background-color: white;
+                height:25px;
+                width:25px;
+                animation-name: spin;
+                animation-duration: 2000ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                position:absolute;
+                left:25%;
+                top:25%;
+            }
+            @keyframes spin {
+                from {transform:rotate(0deg);}
+                to {transform:rotate(360deg);}
+            }
+            #gameGrid{
+                position:absolute;
+                top:50%;
+                left:50%;
+                width:300px;
+                transform: translate(50%, 50%);
+                transform: translate(-130px, -130px);
+
+            }
+            #bullet:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left:0;
+                right:0;
+                margin: 0 auto;
+                width: 100px;
+                height: 10px;
+                opacity: .1;
+                background-color: red;
+                -webkit-animation:fadeout 6s linear infinite; 
+                -moz-animation: fadeout 6s linear infinite; 
+                -o-animation: fadeout 6s linear infinite; 
+                animation: fadeout 6s linear infinite;
+            }
+
+
+
+
+            @keyframes fadeout {
+                0%  { opacity: 1.0; }
+                25%  { opacity: .75; }
+                50%  { opacity: .5; }
+                75%  { opacity: .25; }
+                100%  { opacity: 0; }
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="gameSprites/grid.png" alt = "grid" id = "gameGrid">
+        <img src="gameSprites/playerSprite.png" alt = "grid" id = "playerCharacter">
+
+        <div class="bullet" id = "bullet1"></div>
+        <script src = "gameCode.js"></script>
+    </body>
+</html>
