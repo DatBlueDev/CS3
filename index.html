@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeDetective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        #pokemonImage{
+            width: 1200px;
+            background-color: #F1F1F1;
+            border: 1px solid black;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -45%);        
+        }
+        body{
+            background-color:rgb(11, 9, 24);
+            background-image: url("images/pokemonBackground2.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        #coord{
+            color:white;
+        }
+        #PokemonList{
+            background-color: rgba(0,0,0,0.65);
+            border: 20px rgba(0,0,0,0) dashed;
+            border-radius:30px;
+            height:660px;
+            width:250px;
+            margin-top:3%;
+            margin-left:1%;
+            color:white;
+            text-align: left;
+        }
+        #Score{
+            font-size:30px;
+        }
+        #coord{
+            margin-top: 5%;
+        }
+        .DifficultyIndicator{
+            font-weight: bold;
+        }
+
+
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <img src = "images/pokedetective.png" id="Title">
+
+    <div id="PokemonList">
+        <h1 style="font-size:23px;">Find the following Pokemons: </h1>
+        <p id = "Easy" class="DifficultyIndicator">Easy</p>
+        <ul>
+            <li id="pkmon1">Eevee</li>
+            <li id="pkmon2">Pikachu</li>
+            <li id="pkmon3">Snorlax</li>
+        </ul>
+        <p id = "Medium" class="DifficultyIndicator">Medium</p>
+        <ul>
+            <li id="pkmon4">Gengar</li>
+            <li id="pkmon5">Mr. Mime</li>
+            <li id="pkmon6">Vaporeon</li>
+        </ul>
+        <p id = "Hard" class="DifficultyIndicator">Hard</p>
+        <ul>
+            <li id="pkmon7">Slugma</li>
+            <li id="pkmon8">IgglyBuff</li>
+            <li id="pkmon9">Bonsly</li>
+        </ul>
+        <p id="Score">Score: 0 / 9</p>
+        <p id="coord">Coordinates: </p>
+    </div>
+    <img src = "images/pokemon.webp" id="pokemonImage" onclick="clicked=true;" onmousemove="trackClick(event)" onmouseout="clearstuff()">
+</body>
+</html>
